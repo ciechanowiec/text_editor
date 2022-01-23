@@ -1,9 +1,10 @@
-package com;
+package com.gui;
 
 import java.awt.BorderLayout;
 import java.io.File;
 
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.border.Border;
@@ -17,13 +18,13 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
         super("Text Editor");
-        this.setSize(600, 700);
+        this.setSize(606, 730);
         this.setResizable(false);
 
         initComponents();
 
         setLocationRelativeTo(null);
-        setVisible(true);                     
+        setVisible(true);
     }
     
     private void initComponents() {
@@ -42,6 +43,18 @@ public class MainFrame extends JFrame {
         Border marginBorder = new EmptyBorder(5, 30, 15, 30);
         scrollPane.setBorder(marginBorder);
         this.add(scrollPane, BorderLayout.CENTER);
+    }
+
+    public void setTextForTextArea(String textForTextArea) {
+        this.textArea.setText(textForTextArea);
+    }
+
+    public String getTextFtomTextArea() {
+        return this.textArea.getText();
+    }
+
+    public String getSearchedPhrase() {
+        return this.toolsBar.getSearchedPhrase();
     }
     
 }

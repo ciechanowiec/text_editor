@@ -6,9 +6,13 @@
 
 package com;
 
+import javax.swing.JButton;
+
+import com.gui.MainFrame;
+
 public class ApplicationRunner {
 
-    public static void main(String[] args) {
-        new MainFrame();
+    public static void main(String[] args) throws InterruptedException {
+        Controller.initMainFrame();        
     }
 }
