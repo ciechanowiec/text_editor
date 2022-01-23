@@ -2,8 +2,6 @@ package com.gui;
 
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Component;
-import java.awt.Graphics;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -17,7 +15,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.metal.MetalCheckBoxIcon;
 
 import java.awt.Image;
-import java.awt.Insets;
 
 public class ToolsBar extends JPanel {
 
@@ -41,8 +38,7 @@ public class ToolsBar extends JPanel {
     /* =-=-=-=-=-= INIT METHODS =-=-=-=-=-= */
 
     private void initComponents() {        
-        initOpenButton();
-        // TODO: change buttons except open
+        initOpenButton();        
         initSaveButton();
         initSearchField();
         initSearchButton();
@@ -56,6 +52,7 @@ public class ToolsBar extends JPanel {
         String iconURI = "src/main/resources/icons/open.png";        
         Icon icon = produceResizedIcon(iconURI);
         this.openButton = new JButton(icon);
+        this.openButton.setName("OpenButton");
         this.openButton.setPreferredSize(this.buttonDimension);
         this.openButton.addActionListener(ActionListenersFactory.getInstance().getOpenFromFileAction());
         this.add(this.openButton);
@@ -65,6 +62,7 @@ public class ToolsBar extends JPanel {
         String iconURI = "src/main/resources/icons/save.png";
         Icon icon = produceResizedIcon(iconURI);
         this.saveButton = new JButton(icon);
+        this.saveButton.setName("SaveButton");
         this.saveButton.setPreferredSize(this.buttonDimension);        
         this.saveButton.addActionListener(ActionListenersFactory.getInstance().getSaveIntoFileAction());
         this.add(this.saveButton);
@@ -72,6 +70,7 @@ public class ToolsBar extends JPanel {
 
     private void initSearchField() {
         this.searchField = new JTextField();
+        this.searchField.setName("SearchField");
         this.searchField.setPreferredSize(new Dimension(200, 36));
         Font searchFieldFont = new Font("Default", Font.PLAIN, 17);
         this.searchField.setFont(searchFieldFont);
@@ -89,9 +88,9 @@ public class ToolsBar extends JPanel {
         String iconURI = "src/main/resources/icons/search.png";
         Icon icon = produceResizedIcon(iconURI);
         this.searchButton = new JButton(icon);
-        this.searchButton.setPreferredSize(this.buttonDimension);
-        // TODO: Add Action Listener
-        // this.searchButton.addActionListener(ActionListenersFactory.getInstance().);        
+        this.searchButton.setName("StartSearchButton");
+        this.searchButton.setPreferredSize(this.buttonDimension);        
+        this.searchButton.addActionListener(ActionListenersFactory.getInstance().getSearchAction());        
         this.add(this.searchButton);
     }
 
@@ -99,9 +98,9 @@ public class ToolsBar extends JPanel {
         String iconURI = "src/main/resources/icons/leftArrow.png";
         Icon icon = produceResizedIcon(iconURI);
         this.leftArrowButton = new JButton(icon);
-        this.leftArrowButton.setPreferredSize(this.buttonDimension);
-        // TODO: Add Action Listener
-        // this.leftArrowButton.addActionListener(ActionListenersFactory.getInstance().);
+        this.leftArrowButton.setName("PreviousMatchButton");
+        this.leftArrowButton.setPreferredSize(this.buttonDimension);        
+        this.leftArrowButton.addActionListener(ActionListenersFactory.getInstance().getSelectPreviousAction());
         this.add(this.leftArrowButton);
     }
     
@@ -109,14 +108,15 @@ public class ToolsBar extends JPanel {
         String iconURI = "src/main/resources/icons/rightArrow.png";
         Icon icon = produceResizedIcon(iconURI);
         this.rightArrowButton = new JButton(icon);
-        this.rightArrowButton.setPreferredSize(this.buttonDimension);
-        // TODO: Add Action Listener
-        // this.rightArrowButton.addActionListener(ActionListenersFactory.getInstance().);
+        this.rightArrowButton.setName("NextMatchButton");
+        this.rightArrowButton.setPreferredSize(this.buttonDimension);        
+        this.rightArrowButton.addActionListener(ActionListenersFactory.getInstance().getSelectNextAction());
         this.add(this.rightArrowButton);
     }
 
     private void initRegexCheckBox() {
         this.regexCheckBox = new JCheckBox();
+        this.regexCheckBox.setName("UseRegExCheckbox");
 
         /* Enlarge the checkbox */
         this.regexCheckBox.setIcon(new MetalCheckBoxIcon () {            
@@ -147,8 +147,16 @@ public class ToolsBar extends JPanel {
         return resizedIcon;
     }
 
-    public String getSearchedPhrase() {
+    public String getSearchedPhrase() {        
         return this.searchField.getText();
+    }
+
+    public boolean isUseRegexSelected() {
+        return this.regexCheckBox.isSelected();
+    }
+
+    public JCheckBox getRegexCheckBox() {
+        return this.regexCheckBox;
     }
     
 }

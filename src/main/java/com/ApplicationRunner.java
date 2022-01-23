@@ -1,14 +1,13 @@
 /**
- *  @author Herman Ciechanowiec
- *  Program name: Text Editor
- *  TODO: Add information on the program
+ * @author Herman Ciechanowiec
+ * Program name: Text Editor
+ * Date of creation: January 2022
+ * Features:
+ *  - open text from a file
+ * TODO: Add information on the program
  * */
 
 package com;
-
-import javax.swing.JButton;
-
-import com.gui.MainFrame;
 
 public class ApplicationRunner {
 

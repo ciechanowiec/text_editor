@@ -5,43 +5,32 @@ package com.gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.nio.file.FileSystem;
 
-import javax.swing.Action;
 import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.filechooser.FileSystemView;
 
 import com.Controller;
-import com.logic.DataManager;
 
 public class ActionListenersFactory {
     
     private static ActionListenersFactory instance;
         
-
-    public static ActionListenersFactory getInstance() {
-        if (instance == null) {
-            instance = new ActionListenersFactory();
-        } 
-        return instance;        
-    }
-    
-    private ActionListenersFactory() {
-        
+    private ActionListenersFactory() {    
+        /* A private constructor to disable the possibility to 
+           instantiate more than one instance of this class */
     }    
+    
+        public static ActionListenersFactory getInstance() {
+            if (ActionListenersFactory.instance == null) {
+                ActionListenersFactory.instance = new ActionListenersFactory();
+            } 
+            return ActionListenersFactory.instance;        
+        }
 
     public ActionListener getOpenFromFileAction() {
-        return new ActionListener() {            
+        return new ActionListener() {     
             @Override
-            public void actionPerformed(ActionEvent actionEvent) {                
-                /* Prompts a user to choose a file to open 
-                   and restricts this choice to .txt files */
-                File homeDirectory = FileSystemView.getFileSystemView().getHomeDirectory();
-                JFileChooser fileChooser = new JFileChooser(homeDirectory);
-                FileNameExtensionFilter txtFilter = new FileNameExtensionFilter("TXT File", "txt");
-                fileChooser.setAcceptAllFileFilterUsed(false);
-                fileChooser.setFileFilter(txtFilter);
+            public void actionPerformed(ActionEvent actionEvent) {
+                JFileChooser fileChooser = MainFrame.getInstance().getFileChooser();
                 int choiceStatus = fileChooser.showOpenDialog(null);
                 if (choiceStatus == JFileChooser.APPROVE_OPTION) {                    
                     File selectedFile = fileChooser.getSelectedFile();
@@ -54,19 +43,59 @@ public class ActionListenersFactory {
     public ActionListener getSaveIntoFileAction() {
         return new ActionListener() { 
             @Override
-            public void actionPerformed(ActionEvent actionEvent) {                
-                /* Prompts a user to choose a file to save into 
-                   and restricts this choice to .txt files */
-                File homeDirectory = FileSystemView.getFileSystemView().getHomeDirectory();
-                JFileChooser fileChooser = new JFileChooser(homeDirectory);
-                FileNameExtensionFilter txtFilter = new FileNameExtensionFilter("TXT File", "txt");
-                fileChooser.setAcceptAllFileFilterUsed(false);
-                fileChooser.setFileFilter(txtFilter);
+            public void actionPerformed(ActionEvent actionEvent) {                                
+                JFileChooser fileChooser = MainFrame.getInstance().getFileChooser();
                 int choiceStatus = fileChooser.showSaveDialog(null);
                 if (choiceStatus == JFileChooser.APPROVE_OPTION) {                    
                     File selectedFile = fileChooser.getSelectedFile();
-                    System.out.println(selectedFile.getAbsolutePath());                    
+                    Controller.saveIntoFile(selectedFile);                    
                 }
+            }
+        };
+    }
+
+    public ActionListener getExitAction() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.exit(0);
+            }
+        };
+    }
+
+    public ActionListener getSearchAction() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Controller.search();                
+            }           
+
+        };
+    }
+
+    public ActionListener getSelectNextAction() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Controller.selectNext();
+            }
+        };
+    }
+
+    public ActionListener getSelectPreviousAction() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Controller.selectPrevious();
+            }
+        };
+    }
+
+    public ActionListener getChangeRegexCheckBoxSelectionAction() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Controller.changeRegexCheckBoxSelection();
             }
         };
     }
