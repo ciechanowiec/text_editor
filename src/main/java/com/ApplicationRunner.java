@@ -1,9 +1,19 @@
 /**
  * @author Herman Ciechanowiec
+ * 
  * Program name: Text Editor
+ * 
  * Date of creation: January 2022
- * Features:
+ * 
+ * Time spent to create the program: ~10 hours
+ * 
+ * Functionality:
+ *  - edit text
  *  - open text from a file
+ *  - save text to a file
+ *  - usual text search
+ *  - regex text search
+ * 
  * TODO: Add information on the program
  * */
 

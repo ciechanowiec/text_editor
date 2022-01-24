@@ -1,16 +1,18 @@
 package com.gui;
 
-/* This class implements a singleton design pattern */
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
 import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.filechooser.FileSystemView;
 
 import com.Controller;
 
 public class ActionListenersFactory {
+    
+    /* This class implements a singleton design pattern */
     
     private static ActionListenersFactory instance;
         
@@ -19,23 +21,28 @@ public class ActionListenersFactory {
            instantiate more than one instance of this class */
     }    
     
-        public static ActionListenersFactory getInstance() {
-            if (ActionListenersFactory.instance == null) {
-                ActionListenersFactory.instance = new ActionListenersFactory();
-            } 
-            return ActionListenersFactory.instance;        
-        }
+    public static ActionListenersFactory getInstance() {
+        if (ActionListenersFactory.instance == null) {
+            ActionListenersFactory.instance = new ActionListenersFactory();
+        } 
+        return ActionListenersFactory.instance;        
+    }
 
     public ActionListener getOpenFromFileAction() {
         return new ActionListener() {     
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                JFileChooser fileChooser = MainFrame.getInstance().getFileChooser();
+                File homeDirectory = FileSystemView.getFileSystemView().getHomeDirectory();
+                JFileChooser fileChooser = new JFileChooser(homeDirectory);
+                FileNameExtensionFilter txtFilter = new FileNameExtensionFilter("TXT File", "txt");
+                fileChooser.setAcceptAllFileFilterUsed(false);
+                fileChooser.setFileFilter(txtFilter);
                 int choiceStatus = fileChooser.showOpenDialog(null);
                 if (choiceStatus == JFileChooser.APPROVE_OPTION) {                    
                     File selectedFile = fileChooser.getSelectedFile();
-                    Controller.openFromFile(selectedFile);                    
+                    Controller.openFromFile(selectedFile);
                 }
+                
             }
         };
     }
@@ -44,7 +51,11 @@ public class ActionListenersFactory {
         return new ActionListener() { 
             @Override
             public void actionPerformed(ActionEvent actionEvent) {                                
-                JFileChooser fileChooser = MainFrame.getInstance().getFileChooser();
+                File homeDirectory = FileSystemView.getFileSystemView().getHomeDirectory();
+                JFileChooser fileChooser = new JFileChooser(homeDirectory);
+                FileNameExtensionFilter txtFilter = new FileNameExtensionFilter("TXT File", "txt");
+                fileChooser.setAcceptAllFileFilterUsed(false);
+                fileChooser.setFileFilter(txtFilter);                
                 int choiceStatus = fileChooser.showSaveDialog(null);
                 if (choiceStatus == JFileChooser.APPROVE_OPTION) {                    
                     File selectedFile = fileChooser.getSelectedFile();
@@ -67,7 +78,7 @@ public class ActionListenersFactory {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                Controller.search();                
+                Controller.startNewSearch();                
             }           
 
         };

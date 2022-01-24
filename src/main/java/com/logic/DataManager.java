@@ -9,14 +9,14 @@ import java.nio.file.Path;
 public abstract class DataManager {
 
     private static File currentFile;
-    private static String currentText;
+    private static String currentTextInMemory;
     private static String currentSearchPhrase;
 
     public static void tranferTextFromCurrentFileIntoMemory() {
         try {
             String filePath = currentFile.getAbsolutePath();
             String textToTransfer = Files.readString(Path.of(filePath));
-            DataManager.setCurrentText(textToTransfer);
+            DataManager.setCurrentTextInMemory(textToTransfer);
         } catch (IOException e) {            
             e.printStackTrace();
         }
@@ -25,7 +25,7 @@ public abstract class DataManager {
     public static void tranferTextFromMemoryIntoCurrentFile() {
         try {
             FileWriter fileWriter = new FileWriter(currentFile);
-            fileWriter.append(currentText);
+            fileWriter.append(currentTextInMemory);
             fileWriter.close();            
         } catch (IOException e) {            
             e.printStackTrace();
@@ -40,12 +40,12 @@ public abstract class DataManager {
         currentFile = currentFileToSet;
     }
 
-    public static void setCurrentText(String currentTextToSet) {
-        currentText = currentTextToSet;
+    public static void setCurrentTextInMemory(String currentTextToSet) {
+        currentTextInMemory = currentTextToSet;
     }
 
-    public static String getCurrentText() {
-        return currentText;
+    public static String getCurrentTextInMemory() {
+        return currentTextInMemory;
     }
 
     public static void setCurrentSearchPhrase(String currentSearchPhraseToSet) {

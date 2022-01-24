@@ -35,7 +35,7 @@ public class ToolsBar extends JPanel {
         this.setBorder(marginBorder);
     }
 
-    /* =-=-=-=-=-= INIT METHODS =-=-=-=-=-= */
+    /* =-=-=-=-=-= METHODS TO INIT GUI COMPONENS =-=-=-=-=-= */
 
     private void initComponents() {        
         initOpenButton();        
@@ -51,8 +51,7 @@ public class ToolsBar extends JPanel {
     private void initOpenButton() {
         String iconURI = "src/main/resources/icons/open.png";        
         Icon icon = produceResizedIcon(iconURI);
-        this.openButton = new JButton(icon);
-        this.openButton.setName("OpenButton");
+        this.openButton = new JButton(icon);        
         this.openButton.setPreferredSize(this.buttonDimension);
         this.openButton.addActionListener(ActionListenersFactory.getInstance().getOpenFromFileAction());
         this.add(this.openButton);
@@ -61,21 +60,19 @@ public class ToolsBar extends JPanel {
     private void initSaveButton() {
         String iconURI = "src/main/resources/icons/save.png";
         Icon icon = produceResizedIcon(iconURI);
-        this.saveButton = new JButton(icon);
-        this.saveButton.setName("SaveButton");
+        this.saveButton = new JButton(icon);        
         this.saveButton.setPreferredSize(this.buttonDimension);        
         this.saveButton.addActionListener(ActionListenersFactory.getInstance().getSaveIntoFileAction());
         this.add(this.saveButton);
     }
 
     private void initSearchField() {
-        this.searchField = new JTextField();
-        this.searchField.setName("SearchField");
+        this.searchField = new JTextField();        
         this.searchField.setPreferredSize(new Dimension(200, 36));
         Font searchFieldFont = new Font("Default", Font.PLAIN, 17);
         this.searchField.setFont(searchFieldFont);
         
-        /* Wrap Search field into a panel to add left indent 
+        /* Wrap Search Field into a panel to add left indent 
            from Open Button and Save Button */
         JPanel panelWithSearchField = new JPanel();
         panelWithSearchField.add(this.searchField);
@@ -87,8 +84,7 @@ public class ToolsBar extends JPanel {
     private void initSearchButton() {
         String iconURI = "src/main/resources/icons/search.png";
         Icon icon = produceResizedIcon(iconURI);
-        this.searchButton = new JButton(icon);
-        this.searchButton.setName("StartSearchButton");
+        this.searchButton = new JButton(icon);        
         this.searchButton.setPreferredSize(this.buttonDimension);        
         this.searchButton.addActionListener(ActionListenersFactory.getInstance().getSearchAction());        
         this.add(this.searchButton);
@@ -97,8 +93,7 @@ public class ToolsBar extends JPanel {
     private void initLeftArrowButton() {
         String iconURI = "src/main/resources/icons/leftArrow.png";
         Icon icon = produceResizedIcon(iconURI);
-        this.leftArrowButton = new JButton(icon);
-        this.leftArrowButton.setName("PreviousMatchButton");
+        this.leftArrowButton = new JButton(icon);        
         this.leftArrowButton.setPreferredSize(this.buttonDimension);        
         this.leftArrowButton.addActionListener(ActionListenersFactory.getInstance().getSelectPreviousAction());
         this.add(this.leftArrowButton);
@@ -107,16 +102,14 @@ public class ToolsBar extends JPanel {
     private void initRightArrowButton() {
         String iconURI = "src/main/resources/icons/rightArrow.png";
         Icon icon = produceResizedIcon(iconURI);
-        this.rightArrowButton = new JButton(icon);
-        this.rightArrowButton.setName("NextMatchButton");
+        this.rightArrowButton = new JButton(icon);        
         this.rightArrowButton.setPreferredSize(this.buttonDimension);        
         this.rightArrowButton.addActionListener(ActionListenersFactory.getInstance().getSelectNextAction());
         this.add(this.rightArrowButton);
     }
 
     private void initRegexCheckBox() {
-        this.regexCheckBox = new JCheckBox();
-        this.regexCheckBox.setName("UseRegExCheckbox");
+        this.regexCheckBox = new JCheckBox();        
 
         /* Enlarge the checkbox */
         this.regexCheckBox.setIcon(new MetalCheckBoxIcon () {            
@@ -157,6 +150,6 @@ public class ToolsBar extends JPanel {
 
     public JCheckBox getRegexCheckBox() {
         return this.regexCheckBox;
-    }
+    }    
     
 }

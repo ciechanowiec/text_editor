@@ -8,8 +8,7 @@ public class TextArea extends JTextArea {
     public TextArea() {
         this.setLineWrap(true);
         Font textAreaFont = new Font("Default", Font.PLAIN, 16);
-        this.setFont(textAreaFont);
-        this.setName("TextArea");
+        this.setFont(textAreaFont);        
     }
     
     public void focusText(int startIndex, int searchedPhraseLength) {        

@@ -29,8 +29,7 @@ public class MenuBar extends JMenuBar {
 
     private void initFileMenu() {
         /* Create a File Menu */
-        this.fileMenu = new JMenu("File");
-        this.fileMenu.setName("MenuFile");
+        this.fileMenu = new JMenu("File");        
         this.fileMenu.setMnemonic(KeyEvent.VK_F);
         
         /* Init File Menu items */
@@ -43,29 +42,23 @@ public class MenuBar extends JMenuBar {
         this.fileMenu.add(this.exitItem);
 
         /* Add the File Menu to the Menu Bar */
-        this.add(this.fileMenu);
-
+        this.add(this.fileMenu);        
     }
 
     private void initFileMenuItems() {        
-        this.openItem = new JMenuItem("Open");
-        this.openItem.setName("MenuOpen");
+        this.openItem = new JMenuItem("Open");        
         this.openItem.addActionListener(ActionListenersFactory.getInstance().getOpenFromFileAction());
 
-        this.saveItem = new JMenuItem("Save");
-        this.saveItem.setName("MenuSave");
+        this.saveItem = new JMenuItem("Save");        
         this.saveItem.addActionListener(ActionListenersFactory.getInstance().getSaveIntoFileAction());
 
-        this.exitItem = new JMenuItem("Exit");
-        this.exitItem.setName("MenuExit");
+        this.exitItem = new JMenuItem("Exit");        
         this.exitItem.addActionListener(ActionListenersFactory.getInstance().getExitAction());
-
     }
 
     private void initSearchMenu() {
         /* Create a Search Menu */
-        this.searchMenu = new JMenu("Search");
-        this.searchMenu.setName("MenuSearch");
+        this.searchMenu = new JMenu("Search");        
         this.searchMenu.setMnemonic(KeyEvent.VK_S);
 
         /* Create Search Menu items */
@@ -82,20 +75,16 @@ public class MenuBar extends JMenuBar {
     }
 
     private void initSearchMenuItems() {
-        this.startSearchItem = new JMenuItem("Start search");
-        this.startSearchItem.setName("MenuStartSearch");
+        this.startSearchItem = new JMenuItem("Start search");        
         this.startSearchItem.addActionListener(ActionListenersFactory.getInstance().getSearchAction());
 
-        this.prevSearchItem = new JMenuItem("Previous search");
-        this.prevSearchItem.setName("MenuPreviousMatch");
+        this.prevSearchItem = new JMenuItem("Previous search");        
         this.prevSearchItem.addActionListener(ActionListenersFactory.getInstance().getSelectPreviousAction());
         
-        this.nextMatchItem = new JMenuItem("Next match");
-        this.nextMatchItem.setName("MenuNextMatch");
+        this.nextMatchItem = new JMenuItem("Next match");        
         this.nextMatchItem.addActionListener(ActionListenersFactory.getInstance().getSelectNextAction());
 
-        this.useRegexItem = new JMenuItem("Use regular expressions");
-        this.useRegexItem.setName("MenuUseRegExp");
+        this.useRegexItem = new JMenuItem("Use regular expressions");        
         this.useRegexItem.addActionListener(ActionListenersFactory.getInstance().getChangeRegexCheckBoxSelectionAction());
     }
     
