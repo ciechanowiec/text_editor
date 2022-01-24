@@ -1,20 +1,36 @@
 /**
- * @author Herman Ciechanowiec
  * 
- * Program name: Text Editor
+ * # Text Editor
  * 
- * Date of creation: January 2022
+ * ## Table of Contents
+ * 1. Basic Info
+ * 2. Functionality
+ * 3. Architecture
  * 
- * Time spent to create the program: ~10 hours
+ * ## Basic Info
  * 
- * Functionality:
- *  - edit text
- *  - open text from a file
- *  - save text to a file
- *  - usual text search
- *  - regex text search
+ * This program is a simple text editor which supports working with files and text search.
  * 
- * TODO: Add information on the program
+ * | Parameter                         | Data                                        |
+ * | :-------------------------------: | :-----------------------------------------: |
+ * | Program name:                     | Text Editor                                 |
+ * | Date of creation:                 | January 2022                                |
+ * | Technologies used:                | Java SE                                     |
+ * | Time spent to create the program: | ~10 hours                                   |
+ * | Author:                           | Herman Ciechanowiec, herman@ciechanowiec.eu |
+ * 
+ * ## Functionality
+ * 
+ * The program allows to:
+ * - edit text
+ * - open text from a file
+ * - save text to a file
+ * - perform usual text search
+ * - perform regex text search
+ * 
+ * ## Architecture
+ * The program is divided into three parts: front-end (graphical user interface), back-end (logic of the program) and the controller, which handles a relationship between the front-end and the back-end: 
+ * 
  * */
 
 package com;

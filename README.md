@@ -11,7 +11,7 @@
 This program is a simple text editor which supports working with files and text search.
 
 | Parameter                               | Data                                             |
-| :----------------------------------:    | :----------------------------------------------: |
+| :-------------------------------------: | :----------------------------------------------: |
 | Program name:                           | Text Editor                                      |
 | Date of creation:                       | January 2022                                     |
 | Technologies used:                      | Java SE                                          |
