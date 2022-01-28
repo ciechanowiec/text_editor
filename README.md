@@ -15,7 +15,7 @@ This program is a simple text editor which supports working with files and text 
 | :-------------------------------------: | :----------------------------------------------: |
 | Program name:                           | Text Editor                                      |
 | Date of creation:                       | January 2022                                     |
-| Technologies used:                      | Java SE                                          |
+| Technologies used:                      | Java SE, Maven                                   |
 | Time spent to <br/> create the program: | ~10 hours                                        |
 | Author:                                 | Herman Ciechanowiec <br/> herman@ciechanowiec.eu |
 | License:                                | MIT No Attribution License                       |
