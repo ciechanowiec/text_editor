@@ -40,7 +40,7 @@ The program is divided into three parts: front-end (graphical user interface), b
 <kbd><img src="!presentation/gui_screenshots/3.png"></kbd><br/><br/>
 <kbd><img src="!presentation/gui_screenshots/4.png"></kbd><br/><br/>
 <kbd><img src="!presentation/gui_screenshots/5.png"></kbd><br/><br/>
-<kbd><img src="!presentation/gui_screenshots/6.png"></kbd><br/><br/>
+<kbd><img src="!presentation/gui_screenshots/6.png"></kbd>
 
 ## License
 The program is subject to MIT No Attribution License
