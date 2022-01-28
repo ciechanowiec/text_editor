@@ -2,6 +2,7 @@ package com.gui;
 
 import java.awt.BorderLayout;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.border.Border;
@@ -23,6 +24,7 @@ public class MainFrame extends JFrame {
         super("Text Editor");
         this.setSize(606, 730);
         this.setResizable(false);
+        setMainFrameIcon();
         
         initComponents();
 
@@ -35,7 +37,13 @@ public class MainFrame extends JFrame {
             MainFrame.instance = new MainFrame();
         }
         return MainFrame.instance;
-    }        
+    }    
+    
+    private void setMainFrameIcon() {
+        String iconURI = "src/main/resources/icon.png";
+        ImageIcon icon = new ImageIcon(iconURI);
+        this.setIconImage(icon.getImage());
+    }
 
     private void initComponents() {        
         this.menuBar = new MenuBar();

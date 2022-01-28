@@ -51,7 +51,8 @@ public class ToolsBar extends JPanel {
     private void initOpenButton() {
         String iconURI = "src/main/resources/icons/open.png";        
         Icon icon = produceResizedIcon(iconURI);
-        this.openButton = new JButton(icon);        
+        this.openButton = new JButton(icon);     
+        this.openButton.setFocusPainted(false);   
         this.openButton.setPreferredSize(this.buttonDimension);
         this.openButton.addActionListener(ActionListenersFactory.getInstance().getOpenFromFileAction());
         this.add(this.openButton);
@@ -60,7 +61,8 @@ public class ToolsBar extends JPanel {
     private void initSaveButton() {
         String iconURI = "src/main/resources/icons/save.png";
         Icon icon = produceResizedIcon(iconURI);
-        this.saveButton = new JButton(icon);        
+        this.saveButton = new JButton(icon);  
+        this.saveButton.setFocusPainted(false);        
         this.saveButton.setPreferredSize(this.buttonDimension);        
         this.saveButton.addActionListener(ActionListenersFactory.getInstance().getSaveIntoFileAction());
         this.add(this.saveButton);
@@ -85,6 +87,7 @@ public class ToolsBar extends JPanel {
         String iconURI = "src/main/resources/icons/search.png";
         Icon icon = produceResizedIcon(iconURI);
         this.searchButton = new JButton(icon);        
+        this.searchButton.setFocusPainted(false);  
         this.searchButton.setPreferredSize(this.buttonDimension);        
         this.searchButton.addActionListener(ActionListenersFactory.getInstance().getSearchAction());        
         this.add(this.searchButton);
@@ -93,7 +96,8 @@ public class ToolsBar extends JPanel {
     private void initLeftArrowButton() {
         String iconURI = "src/main/resources/icons/leftArrow.png";
         Icon icon = produceResizedIcon(iconURI);
-        this.leftArrowButton = new JButton(icon);        
+        this.leftArrowButton = new JButton(icon);   
+        this.leftArrowButton.setFocusPainted(false);       
         this.leftArrowButton.setPreferredSize(this.buttonDimension);        
         this.leftArrowButton.addActionListener(ActionListenersFactory.getInstance().getSelectPreviousAction());
         this.add(this.leftArrowButton);
@@ -102,7 +106,8 @@ public class ToolsBar extends JPanel {
     private void initRightArrowButton() {
         String iconURI = "src/main/resources/icons/rightArrow.png";
         Icon icon = produceResizedIcon(iconURI);
-        this.rightArrowButton = new JButton(icon);        
+        this.rightArrowButton = new JButton(icon);     
+        this.rightArrowButton.setFocusPainted(false);   
         this.rightArrowButton.setPreferredSize(this.buttonDimension);        
         this.rightArrowButton.addActionListener(ActionListenersFactory.getInstance().getSelectNextAction());
         this.add(this.rightArrowButton);
