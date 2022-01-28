@@ -16,7 +16,7 @@
  * | :-------------------------------: | :-----------------------------------------: |
  * | Program name:                     | Text Editor                                 |
  * | Date of creation:                 | January 2022                                |
- * | Technologies used:                | Java SE                                     |
+ * | Technologies used:                | Java SE, Maven                              |
  * | Time spent to create the program: | ~10 hours                                   |
  * | Author:                           | Herman Ciechanowiec, herman@ciechanowiec.eu |
  * | License:                          | MIT No Attribution License                  |
