@@ -35,12 +35,12 @@ The program is divided into three parts: front-end (graphical user interface), b
 <img src="!presentation/program_architecture.jpg">
 
 ## Screenshots
-<img src="!presentation/gui_screenshots/1.png"><br/>
-<img src="!presentation/gui_screenshots/2.png"><br/>
-<img src="!presentation/gui_screenshots/3.png"><br/>
-<img src="!presentation/gui_screenshots/4.png"><br/>
-<img src="!presentation/gui_screenshots/5.png"><br/>
-<img src="!presentation/gui_screenshots/6.png"><br/>
+<kbd><img src="!presentation/gui_screenshots/1.png"></kbd><br/><br/>
+<kbd><img src="!presentation/gui_screenshots/2.png"></kbd><br/><br/>
+<kbd><img src="!presentation/gui_screenshots/3.png"></kbd><br/><br/>
+<kbd><img src="!presentation/gui_screenshots/4.png"></kbd><br/><br/>
+<kbd><img src="!presentation/gui_screenshots/5.png"></kbd><br/><br/>
+<kbd><img src="!presentation/gui_screenshots/6.png"></kbd><br/><br/>
 
 ## License
 The program is subject to MIT No Attribution License
@@ -53,9 +53,9 @@ without restriction, including without limitation the rights to use, copy, modif
 merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
 permit persons to whom the Software is furnished to do so.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+The Software is provided "as is", without warranty of any kind, express or implied,
+including but not limited to the warranties of merchantability, fitness for a
+particular purpose and noninfringement. In no event shall the authors or copyright
+holders be liable for any claim, damages or other liability, whether in an action
+of contract, tort or otherwise, arising from, out of or in connection with the
+Software or the use or other dealings in the Software.
