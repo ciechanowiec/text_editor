@@ -19,6 +19,7 @@
  * | Technologies used:                | Java SE                                     |
  * | Time spent to create the program: | ~10 hours                                   |
  * | Author:                           | Herman Ciechanowiec, herman@ciechanowiec.eu |
+ * | License:                          | MIT No Attribution License                  |
  * 
  * ## Functionality
  * 
