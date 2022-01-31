@@ -10,7 +10,8 @@
  * 
  * ## Basic Info
  * 
- * This program is a simple text editor which supports working with files and text search.
+ * This program is a simple text editor which supports working with files 
+ * and text search, both usual and with regex.
  * 
  * | Parameter                         | Data                                        |
  * | :-------------------------------: | :-----------------------------------------: |
@@ -31,7 +32,8 @@
  * - perform regex text search
  * 
  * ## Architecture
- * The program is divided into three parts: front-end (graphical user interface), back-end (logic of the program) and the controller, which handles a relationship between the front-end and the back-end: 
+ * The program is divided into three parts: front-end (graphical user interface), back-end (logic of the program)
+ * and the controller, which handles a relationship between the front-end and the back-end.
  * 
  * ## License
  * The program is subject to MIT No Attribution License
