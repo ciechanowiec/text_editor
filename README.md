@@ -9,7 +9,7 @@
 
 ## Basic Info
 
-This program is a simple text editor which supports working with files and text search.
+This program is a simple text editor which supports working with files and text search, both usual and with regex.
 
 | Parameter                               | Data                                             |
 | :-------------------------------------: | :----------------------------------------------: |
